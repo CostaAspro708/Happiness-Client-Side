@@ -1,17 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Country from "./Country";
+import styles from "./style.module.css";
 
+import {ApiTable} from "./table.js";
+
+  function App() {
+   
+    return (
+    <div> api table assignments
+      <div className={styles.Container}>
+        <div className={styles.Center}>
+          <ApiTable/>
+        </div> 
+      </div>
+    </div>
+    );
+  }
+
+const rootElement = document.getElementById("root");
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <switch>
+        <Route path="/country">
+          <Country/>
+        </Route>
+        <Route exact path="/">
+          <App/>
+        </Route>
+      </switch>
+    </Router>
   </React.StrictMode>,
-  document.getElementById('root')
+  rootElement
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

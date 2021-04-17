@@ -1,0 +1,15 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .Container {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .Center {
+    display: inline-block;
+  }
+  
+  
